@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+
+@import "tailwindcss";
+@font-face {
+  font-family: 'Makinas-4-Flat';
+  src: url('/fonts/Makinas-4-Flat.woff2') format('woff2'),
+       url('/fonts/Makinas-4-Flat.woff') format('woff'),
+       url('/fonts/Makinas-4-Flat.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.Makinas-4-Flat {
+  font-family: "Makinas-4-Flat", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.zen-maru-gothic-regular {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#about {
+    scroll-margin-top: 80px; /* 上から80px下にスクロールさせる */
+}
+
+#voice {
+    scroll-margin-top: 80px; /* 上から80px下にスクロールさせる */
+}
+
+#news {
+    scroll-margin-top: 80px; /* 上から80px下にスクロールさせる */
+}
+
+#qa {
+    scroll-margin-top: 80px; /* 上から80px下にスクロールさせる */
+}
+
+#school {
+    scroll-margin-top: 80px; /* 上から80px下にスクロールさせる */
+}

@@ -1,11 +1,520 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+// 最新順に並び替え
+const latestPosts = allPosts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
+const title = "全国言友会 吃音のある中高生交流会";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title}>
+    
+    <section class="relative h-[300px] md:h-[500px] lg:h-[700px] overflow-hidden bg-slate-900 bg-cover bg-center" style="background-image: url('/images/top1.png');">
+    </section>
+
+    <section class="bg-[#a5ddff] py-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            
+            <div class="order-2 md:order-1">
+    <div class="border-3 border-white rounded-3xl p-8 md:p-12 md:ml-14 relative overflow-hidden group">
+        
+
+        <div class="relative z-10">
+            <p class="text-white font-bold leading-loose text-xl">
+                吃音のある人は100人に1人。
+                <br>
+全国には吃音のある中高生が沢山います。
+<br>
+お互いの経験を共有し、悩みや喜びを分かち合う仲間を見つけませんか？
+<br>
+思春期の困りごと，一緒に乗り越えよう。
+<br>
+吃音のある中高生交流会で、同年代の吃音のある友達と心のつながりを感じてください。
+            </p>
+        </div>
+    </div>
+</div>
+
+            <div class="order-1 md:order-2">
+                <div class="relative">
+                    <div class="relative">
+                        <img 
+                            src="/images/top2.png" 
+                            alt="交流会の様子イメージ" 
+                            class="w-full h-auto object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="py-24 max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            
+            <div class="flex flex-col justify-center space-y-10 md:ml-14">
+                
+                <div>
+                    <h3 class="w-fit text-xl md:text-2xl font-bold mb-4 text-sky-500 pb-2 pr-2">
+                        全国に吃音のある仲間を増やす
+                    </h3>
+                    <p class="text-base md:text-lg font-bold text-blue-900 leading-relaxed">
+                        吃音のことや趣味のことを語り合ったり、みんなでゲームをしたり、吃音のある仲間同士で楽しく過ごせる時間にします。
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="w-fit text-xl md:text-2xl font-bold mb-4 text-sky-500 pb-2 pr-2">
+                        オンラインによるグループトーク
+                    </h3>
+                    <p class="text-base md:text-lg font-bold text-blue-900 leading-relaxed">
+                        同年代の少人数グループ（4名程度）でZoomでお話します。ニックネームで参加してください。チャットのみでの参加も可能です。上手く話す必要はありません。もちろん時間が掛かっても大丈夫。安心して参加して下さい。
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="w-fit text-xl md:text-2xl font-bold mb-4 text-sky-500 pb-2 pr-2">
+                        吃音のある先輩のサポート
+                    </h3>
+                    <p class="text-base md:text-lg font-bold text-blue-900 leading-relaxed">
+                        吃音のある大学生、若手社会人、ことばの教室の先生、言語聴覚士が司会を行いグループトークをサポートします。
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="relative w-full max-w-md mx-auto md:ml-auto overflow-hidden mt-8 md:mt-0">
+    <img 
+        src="/images/top3.png" 
+        alt="" 
+        class="w-full h-auto object-cover rounded-2xl shadow-sm"
+    />
+</div>
+
+        </div>
+    </section>
+
+    <section id="voice" class="bg-sky-100 py-24 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+             <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-200/30 blur-3xl"></div>
+             <div class="absolute -bottom-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-orange-200/30 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <h3 class="w-fit mx-auto text-2xl font-bold mb-16 text-slate-900 border-b-4 border-blue-600 pb-3 px-2">
+    参加者の声
+</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="relative max-w-lg mx-auto">
+                    <div class="bg-white p-8 pb-6 rounded-3xl relative">
+                        <div class="text-4xl text-black absolute top-4 left-4">“</div>
+        
+                        <p class="text-black font-medium leading-relaxed relative z-10 px-2">
+                            とても楽しく、皆さんと話せて勇気が出ました。皆さんの経験談などを聞かせていただけて、本当に励まされました。
+                        </p>
+                        <div class="text-4xl text-black absolute top-4 right-4">”</div>
+                        <div class="relative z-10 text-right">
+                            <span class="text-sm font-bold text-black px-3 py-1 rounded-full">
+                                高校1年生・男性
+                            </span>
+                        </div>
+
+                        <div class="absolute -bottom-[28px] right-10 w-8 h-10 bg-white border-l border-r border-slate-100 -rotate-20" 
+                            style="clip-path: polygon(0 0, 100% 0, 50% 100%);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative max-w-lg mx-auto">
+                    <div class="bg-white p-8 pb-6 rounded-3xl relative">
+                        <div class="text-4xl text-black absolute top-4 left-4">“</div>
+        
+                        <p class="text-black font-medium leading-relaxed relative z-10 px-2">
+                            45分が一瞬に感じるほど楽しい時間を過ごさせて頂きました。またこのような機会に積極的に参加したいです！
+                        </p>
+                        <div class="text-4xl text-black absolute top-4 right-4">”</div>
+                        <div class="relative z-10 text-right">
+                            <span class="text-sm font-bold text-black px-3 py-1 rounded-full">
+                                中学2年生・女性
+                            </span>
+                        </div>
+
+                        <div class="absolute -bottom-[28px] right-10 w-8 h-10 bg-white border-l border-r border-slate-100 -rotate-20" 
+                            style="clip-path: polygon(0 0, 100% 0, 50% 100%);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative max-w-lg mx-auto">
+                    <div class="bg-white p-8 pb-6 rounded-3xl relative">
+                        <div class="text-4xl text-black absolute top-4 left-4">“</div>
+        
+                        <p class="text-black font-medium leading-relaxed relative z-10 px-2">
+                            身近に吃音の人がいなかったので、『自分と同じ人がいる』と思えて安心しました。新学期も頑張れそうです。
+                        </p>
+                        <div class="text-4xl text-black absolute top-4 right-4">”</div>
+                        <div class="relative z-10 text-right">
+                            <span class="text-sm font-bold text-black px-3 py-1 rounded-full">
+                                高校2年生・女性
+                            </span>
+                        </div>
+
+                        <div class="absolute -bottom-[28px] right-10 w-8 h-10 bg-white border-l border-r border-slate-100 -rotate-20" 
+                            style="clip-path: polygon(0 0, 100% 0, 50% 100%);">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-5xl mx-auto px-6">
+        <h3 class="w-fit mx-auto text-2xl md:text-2xl font-bold mb-16 text-slate-900 border-b-4 border-blue-600 pb-3 px-2">
+    運営メンバー紹介
+</h3>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-10">
+            
+            <div class="text-center group flex flex-col items-center">
+                <div class="relative w-36 h-36 mx-auto mb-5 rounded-full overflow-hidden shadow-lg transition-transform group-hover:scale-105">
+                    <img src="/images/S__54378512.jpg" alt="スタッフ" class="w-full h-full object-cover">
+                </div>
+                <p class="font-bold text-lg text-slate-900">青木 瑞樹</p>
+                <p class="text-sm text-blue-600 font-medium mt-1 mb-4">大学院生</p>
+                <p class="text-left text-xs md:text-base font-medium text-black leading-relaxed max-w-[300px]">
+                    大学院の博士課程で吃音の勉強をしています。
+                    <br>
+                    私も当事者で5歳ごろから吃音があります。
+                    <br>
+小学校の頃はことばがなかなか出ない「難発」が主でしたが，今はことばを繰り返す「連発」が主な症状です。吃音の勉強をしたり，吃音のある当事者と関わったりすることで，自分の吃音を受け入れ前向きに生活できています。
+<br>
+皆さんと交流会で会えることを楽しみにしています♪
+                </p>
+            </div>
+
+            <div class="text-center group flex flex-col items-center">
+                <div class="relative w-36 h-36 mx-auto mb-5 rounded-full overflow-hidden shadow-lg transition-transform group-hover:scale-105">
+                    <img src="/images/S__7684109.jpg" alt="スタッフ" class="w-full h-full object-cover">
+                </div>
+                <p class="font-bold text-lg text-slate-900">西尾 優人</p>
+                <p class="text-sm text-blue-600 font-medium mt-1 mb-4">おおさか結言友会</p>
+                <p class="text-left text-xs md:text-base font-medium text-black leading-relaxed max-w-[300px]">
+                    おおさか結言友会で会長をしています。
+                    <br>
+                    物心ついた頃からどもっていた記憶があり、元々は言葉を繰り返す連発がありましたが、少しずつどもることを隠すようになり、話し始めの言葉が出てこないブロック(難発)に変わりました。
+                    <br>
+元々は話すことを避けていましたが、今では相談に乗ったり話すことが中心となるお仕事をしています。
+<br>
+交流会ではみんなが仲間です！自分を偽らずに楽しんでくださいね！
+                </p>
+            </div>
+
+            <div class="text-center group flex flex-col items-center">
+                <div class="relative w-36 h-36 mx-auto mb-5 rounded-full overflow-hidden shadow-lg transition-transform group-hover:scale-105">
+                    <img src="/images/S__293560331 (1).jpg" alt="スタッフ" class="w-full h-full object-cover">
+                </div>
+                <p class="font-bold text-lg text-slate-900">たぶち せいな</p>
+                <p class="text-sm text-blue-600 font-medium mt-1 mb-4">社会人1年目</p>
+                <p class="text-left text-xs md:text-base font-medium text-black leading-relaxed max-w-[300px]">
+                    物心ついたときから吃音症があり社会人1年目の今でも吃音症状に悩む日々が続いています。
+                    <br>
+私が中高生の頃は吃音のことを誰にも相談できず一番苦しんだ時期でもありました。
+<br>
+ですがこの交流会では同じ気持ちの仲間に会えることができます。
+<br>
+ぜひ一緒に楽しい時間を過ごしましょう〜！
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+   <section id="news" class="bg-slate-200 py-24 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <h3 class="w-fit mx-auto text-2xl font-bold mb-16 text-slate-900 border-b-4 border-blue-600 pb-3 px-2">
+        お知らせ
+    </h3>
+
+    <div class="divide-y divide-slate-100">
+        {latestPosts.map((post) => (
+            <a href={`/posts/${post.id}`} class="group block py-6 transition-colors">
+                <div class="flex flex-col md:flex-row md:items-center gap-4">
+                    <time class="text-base text-black font-medium shrink-0">
+                        {post.data.date.toLocaleDateString('ja-JP').replace(/\//g, '.')}
+                    </time>
+                    
+                    <span class="w-fit px-3 py-1 text-xs font-bold text-blue-600 bg-blue-50 rounded-full shrink-0">
+                        {post.data.tag}
+                    </span>
+                    
+                    <h4 class="flex-1 text-lg font-bold text-slate-800 group-hover:text-blue-600 group-hover:underline decoration-2 underline-offset-4 transition-colors">
+                        {post.data.title}
+                    </h4>
+                </div>
+            </a>
+        ))}
+    </div>
+    </div>
+</section>
+
+    <section id="qa" class="bg-slate-50 py-24">
+        <div class="max-w-4xl mx-auto px-6">
+             <h3 class="w-fit mx-auto text-2xl md:text-2xl font-bold mb-16 text-slate-900 border-b-4 border-blue-600 pb-3 px-2">
+    よくある質問
+</h3>
+
+            <div class="space-y-4">
+                
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
+                    <button class="category-button cursor-pointer w-full px-6 py-5 md:px-8 md:py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h4 class="text-base md:text-lg font-bold text-slate-800">
+                            A. 申し込みについて
+                        </h4>
+                        <svg class="category-icon w-5 h-5 md:w-6 md:h-6 text-slate-400 transition-transform duration-300 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    
+                    <div class="category-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-6 md:px-8 md:pb-8 pt-8 border-t border-slate-100 space-y-8 mt-2">
+                                
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-1</span>
+                                        <span class="leading-relaxed">申し込みはどうすればよいですか？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        開催日程&申込ページよりお願いします。
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-2</span>
+                                        <span class="leading-relaxed">キャンセルしたい時・予約を変更したい時はどうすればよいですか？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        お問い合わせページよりお願いします。
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-3</span>
+                                        <span class="leading-relaxed">申し込み期限はありますか？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        運営の準備の都合上、10日間前までにお申込みください。詳しくは開催日程をご覧ください。
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-4</span>
+                                        <span class="leading-relaxed">Googleフォームから申し込みができませんがどうしたらよいですか？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        メール（chukosei.tsudoi@gmail.com)にてお申込みください。<br>
+                                        「エラーが出てGoogleフォームから申し込みできません」など、一言添えていただけると幸いです。
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-5</span>
+                                        <span class="leading-relaxed">参加費はありますか？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        無料です。
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
+                    <button class="category-button cursor-pointer w-full px-6 py-5 md:px-8 md:py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h4 class="text-base md:text-lg font-bold text-slate-800">
+                            B. 内容・参加資格について
+                        </h4>
+                        <svg class="category-icon w-5 h-5 md:w-6 md:h-6 text-slate-400 transition-transform duration-300 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    
+                    <div class="category-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-6 md:px-8 md:pb-8 pt-8 border-t border-slate-100 space-y-8 mt-2">
+                                
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-1</span>
+                                        <span class="leading-relaxed">吃音のある中高生交流会の目的は？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        中高生時代に吃音の悩みを相談したり分かち合う場所はほとんどありません。<br>
+                                        ひとりで悩みを抱えている吃音のある中高生は多くいます。<br>
+                                        同年代同士で悩みや体験をわかち、共に考え、“当事者目線“で未来を見据える場を提供することを目的に開催しています。<br>
+                                        定期的にオンラインで年に4回程開催していく予定です。
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-2</span>
+                                        <span class="leading-relaxed">全国言友会とは？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        全国言友会連絡協議会は、個々人が「吃音があっても豊かに生きる」ための方法を見つけ、<br>
+                                        実践するためのセルフヘルプ活動の拡充と、「吃音があっても豊かに生きられる社会」の実現に向けて、日々活動を続けています。
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-3</span>
+                                        <span class="leading-relaxed">参加資格はありますか？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        中学生、高校生年代(小学6年生も可)の吃音のある方であればどなたでも参加可能です。
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-4</span>
+                                        <span class="leading-relaxed">未診断でもセルフヘルプグループに参加できますか？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        大丈夫です。また、吃音の症状の重さや診断の有無に関係なく参加可能です。<br>
+                                        吃音の診断を受けていない、吃音かどうかわからない、吃音の集まりに行ったことがない人でも大丈夫です。<br>
+                                        ぜひご参加ください！
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-5</span>
+                                        <span class="leading-relaxed">言語訓練は行いますか？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        言語訓練は行いません。
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
+                    <button class="category-button cursor-pointer w-full px-6 py-5 md:px-8 md:py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h4 class="text-base md:text-lg font-bold text-slate-800">
+                            C. Zoomについて
+                        </h4>
+                        <svg class="category-icon w-5 h-5 md:w-6 md:h-6 text-slate-400 transition-transform duration-300 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    
+                    <div class="category-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-6 md:px-8 md:pb-8 pt-8 border-t border-slate-100 space-y-8 mt-2">
+                                
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">C-1</span>
+                                        <span class="leading-relaxed">ZoomのURLが分かりません</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        申し込みフォームを送信したら、自動返信メールが届きます。開催日数日前にZoomのURLが記してあるメールをお送りします。<br>
+                                        メールが届かない場合は、<br>
+                                        「迷惑メールフォルダに分類されている」「入力したメールアドレスが間違っている」「申し込みができていない」<br>
+                                        などの可能性が考えられます。<br>
+                                        心配な場合は、メール（chukosei.tsudoi@gmail.com)にてお問い合わせください。
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-blue-600 flex items-start mb-2">
+                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">C-2</span>
+                                        <span class="leading-relaxed">Zoomの使い方は？</span>
+                                    </h4>
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                        自動返信メール記載のURLを押すと（初めて使用する場合には自動的にアプリのインストールが始まり）、<br>
+                                        ミーティングに入ることができます。<br>
+                                        スマホ・タブレットからの場合は、<br>
+                                        ・事前にアプリをインストールする必要があります。<br>
+                                        ・起動したアプリから、「参加」の項目に進み、ミーティングIDとパスワードを入力して、参加ボタンを押して参加できます。
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="school" class="py-24 bg-gradient-to-br from-blue-700 to-blue-800 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-50 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h3 class="text-3xl font-bold mb-6">中学校・高校の先生方へ</h3>
+            <p class="mb-10 text-blue-100 text-lg max-w-3xl mx-auto leading-relaxed">
+                先生たちに知ってほしい吃音のこと（リーフレット・動画）を無料で公開しています。
+                <br>
+                教育現場での理解促進にお役立てください。
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+            
+                <div class="flex flex-col items-center">
+                    
+                    <div class="relative w-full overflow-hidden shadow-lg rounded-xl">
+                        <img 
+                            src="/images/d6c057da4cefbb4507c627bd9d384e46.jpg" 
+                            alt="イメージ画像" 
+                            class="w-full h-auto object-cover"
+                        />
+                    </div>
+                    
+                    <a href="#" class="group mt-6 inline-flex items-center w-fit bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700 hover:text-white transition-all duration-200">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 transition-colors text-blue-700 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+    </svg>
+    ダウンロード
+</a>
+                    
+                </div>
+
+                <div class="relative w-full mx-auto mt-8 overflow-hidden aspect-video bg-slate-800 shadow-lg rounded-xl">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/p0vtc61DUHA?si=ULJReKeLskzFm4u8" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
 </Layout>

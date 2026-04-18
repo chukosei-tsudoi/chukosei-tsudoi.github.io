@@ -1,0 +1,49 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro'; // 既存の共通レイアウト
+
+// 1. 全記事のIDを取得して、各ページのパスを生成
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map(post => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+// 2. 記事データの取得
+const { post } = Astro.props;
+// 3. Markdownのレンダリング
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title}>
+  <article class="py-36 max-w-4xl mx-auto px-6">
+    <header class="mb-12 border-b border-slate-100 pb-8">
+      <div class="flex items-center gap-4 mb-4">
+        <time class="text-slate-500 font-medium">
+          {post.data.date.toLocaleDateString('ja-JP').replace(/\//g, '.')}
+        </time>
+        <span class="px-3 py-1 text-xs font-bold text-blue-600 bg-blue-50 rounded-full">
+          {post.data.tag}
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-3xl font-bold text-slate-900 leading-tight">
+        {post.data.title}
+      </h1>
+    </header>
+
+    <div class="font-medium text-lg prose prose-slate prose-lg max-w-none prose-headings:text-slate-900 prose-headings:font-bold prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-2xl">
+      <Content />
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-slate-100">
+      <a href="/" class="inline-flex items-center text-slate-600 font-bold hover:text-blue-600 transition">
+        <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        トップページに戻る
+      </a>
+    </footer>
+  </article>
+</Layout>
