@@ -24,18 +24,18 @@ const { title } = Astro.props;
 </head>
 <body class="zen-maru-gothic-regular bg-slate-50 text-slate-800 antialiased">
 
-    <header id="main-header" class="fixed w-full top-0 left-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm border-b border-slate-100">
-    <div id="header-inner" class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-all duration-300">
+    <header id="main-header" class="fixed w-full top-0 left-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent">
+    <div id="header-inner" class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center transition-all duration-300">
         <a href="/" class="relative z-[60]"> 
             <h1 class="Makinas-4-Flat text-lg md:text-xl font-bold text-blue-700">全国言友会 吃音のある中高生交流会</h1>
         </a>
 
         <nav class="hidden lg:flex items-center gap-1">
-            <a href="#about" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-medium rounded-lg hover:bg-slate-50 transition">交流会について</a>
-            <a href="#voice" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-medium rounded-lg hover:bg-slate-50 transition">参加者の声</a>
-            <a href="#news" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-medium rounded-lg hover:bg-slate-50 transition">お知らせ</a>
-            <a href="#qa" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-medium rounded-lg hover:bg-slate-50 transition">よくある質問</a>
-            <a href="#school" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-medium rounded-lg hover:bg-slate-50 transition">先生方へ</a>
+            <a href="#about" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">交流会について</a>
+            <a href="#voice" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">参加者の声</a>
+            <a href="#news" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">お知らせ</a>
+            <a href="#qa" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">よくある質問</a>
+            <a href="#school" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">中学校・高校の先生方へ</a>
             <a href="#contact" class="ml-2 px-5 py-2 text-sm font-bold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition">お問い合わせ</a>
         </nav>
 
@@ -83,27 +83,27 @@ const { title } = Astro.props;
 </body>
 
 <script is:inline>
-    // スクロール時の処理を登録
-    window.addEventListener('scroll', function() {
+    function updateHeader() {
         const header = document.getElementById('main-header');
         const inner = document.getElementById('header-inner');
-        
-        // 上から50px以上スクロールされたら
+        if (!header || !inner) return;
+
         if (window.scrollY > 100) {
-            // 背景白（少し透かし）と下線、影を追加
-            header.classList.remove('bg-transparent', 'border-transparent');
-            header.classList.add('bg-white/90', 'backdrop-blur-sm', 'border-slate-100');
-            
+            // スクロール時：白背景にする
+            header.classList.replace('bg-transparent', 'bg-white/90');
+            header.classList.replace('border-transparent', 'border-slate-100');
+            header.classList.add('backdrop-blur-sm', 'shadow-sm');
         } else {
-            // 一番上にいる時は背景を透明に戻す
-            header.classList.add('bg-transparent', 'border-transparent');
-            header.classList.remove('bg-white/90', 'backdrop-blur-sm', 'border-slate-200', 'shadow-sm');
-            
-            // 余白を元に戻す
-            inner.classList.remove('py-3');
-            inner.classList.add('pb-6', 'pt-8');
+            // トップに戻った時：透明に戻す
+            header.classList.replace('bg-white/90', 'bg-transparent');
+            header.classList.replace('border-slate-100', 'border-transparent');
+            header.classList.remove('backdrop-blur-sm', 'shadow-sm');
         }
-    });
+    }
+
+    // スクロール時と読み込み時に実行
+    window.addEventListener('scroll', updateHeader);
+    updateHeader(); // これで読み込み直後も判定
 </script>
 
 <script is:inline>
