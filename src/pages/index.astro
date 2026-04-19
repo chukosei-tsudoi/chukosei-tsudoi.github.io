@@ -14,18 +14,27 @@ const title = "全国言友会 吃音のある中高生交流会";
 
 <Layout title={title}>
     
-    <section class="relative h-[300px] md:h-[500px] lg:h-[700px] overflow-hidden bg-slate-900 bg-cover bg-center" style="background-image: url('/images/top1.png');">
-    </section>
+    <section class="relative md:h-[500px] lg:h-[700px] overflow-hidden bg-slate-900">
+    <div class="bg-[#a5ddff] flex flex-col h-full md:hidden">
+        <img src="/images/top1_sm.png" alt="" class="w-full object-cover" />
+        <img src="/images/top2_sm.png" alt="" class="w-full object-cover" />
+    </div>
 
-    <section class="bg-[#a5ddff] py-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div class="hidden md:block h-full w-full">
+        <img src="/images/top1.png" alt="" class="h-full w-full object-cover" />
+    </div>
+
+</section>
+
+    <section class="bg-[#a5ddff] py-10 max-md:pb-4 md:py-20 px-6">
+        <div class="max-w-6xl mx-auto grid max-md:m-3 md:grid-cols-2 gap-10 md:gap-16 items-center">
             
-            <div class="order-2 md:order-1">
+            <div class="order-1 md:order-1">
     <div class="border-3 border-white rounded-3xl p-8 md:p-12 md:ml-14 relative overflow-hidden group">
         
 
         <div class="relative z-10">
-            <p class="text-white font-bold leading-loose text-xl">
+            <p class="text-white font-bold leading-loose text-base md:text-xl">
                 吃音のある人は100人に1人。
                 <br>
 全国には吃音のある中高生が沢山います。
@@ -55,7 +64,7 @@ const title = "全国言友会 吃音のある中高生交流会";
         </div>
     </section>
 
-    <section id="about" class="py-24 max-w-6xl mx-auto px-6">
+    <section id="about" class="py-16 md:py-24 max-w-6xl mx-auto px-8 md:px-6">
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
             
             <div class="flex flex-col justify-center space-y-10 md:ml-14">
@@ -89,7 +98,7 @@ const title = "全国言友会 吃音のある中高生交流会";
 
             </div>
 
-            <div class="relative w-full max-w-md mx-auto md:ml-auto overflow-hidden mt-8 md:mt-0">
+            <div class="relative w-full max-w-md mx-auto md:ml-auto overflow-hidden max-md:mx-4 mt-8 md:mt-0">
     <img 
         src="/images/top3.png" 
         alt="" 
@@ -100,17 +109,13 @@ const title = "全国言友会 吃音のある中高生交流会";
         </div>
     </section>
 
-    <section id="voice" class="bg-sky-100 py-24 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-             <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-200/30 blur-3xl"></div>
-             <div class="absolute -bottom-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-orange-200/30 blur-3xl"></div>
-        </div>
+    <section id="voice" class="bg-sky-100 py-16 md:py-24 relative overflow-hidden">
 
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="max-w-6xl mx-auto px-10 md:px-6 relative z-10">
             <h3 class="w-fit mx-auto text-2xl font-bold mb-16 text-slate-900 border-b-4 border-blue-600 pb-3 px-2">
     参加者の声
 </h3>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 max-md:pb-4 gap-20 md:gap-8">
 
                 <div class="relative max-w-lg mx-auto">
                     <div class="bg-white p-8 pb-6 rounded-3xl relative">
@@ -176,12 +181,12 @@ const title = "全国言友会 吃音のある中高生交流会";
         </div>
     </section>
 
-    <section class="py-24 max-w-5xl mx-auto px-6">
+    <section class="py-16 md:py-24 max-w-5xl mx-auto px-6">
         <h3 class="w-fit mx-auto text-2xl md:text-2xl font-bold mb-16 text-slate-900 border-b-4 border-blue-600 pb-3 px-2">
     運営メンバー紹介
 </h3>
         
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-10">
             
             <div class="text-center group flex flex-col items-center">
                 <div class="relative w-36 h-36 mx-auto mb-5 rounded-full overflow-hidden shadow-lg transition-transform group-hover:scale-105">
@@ -189,7 +194,7 @@ const title = "全国言友会 吃音のある中高生交流会";
                 </div>
                 <p class="font-bold text-lg text-slate-900">青木 瑞樹</p>
                 <p class="text-sm text-blue-600 font-medium mt-1 mb-4">大学院生</p>
-                <p class="text-left text-xs md:text-base font-medium text-black leading-relaxed max-w-[300px]">
+                <p class="text-left text-base md:text-base font-medium text-black leading-relaxed max-w-[300px]">
                     大学院の博士課程で吃音の勉強をしています。
                     <br>
                     私も当事者で5歳ごろから吃音があります。
@@ -206,7 +211,7 @@ const title = "全国言友会 吃音のある中高生交流会";
                 </div>
                 <p class="font-bold text-lg text-slate-900">西尾 優人</p>
                 <p class="text-sm text-blue-600 font-medium mt-1 mb-4">おおさか結言友会</p>
-                <p class="text-left text-xs md:text-base font-medium text-black leading-relaxed max-w-[300px]">
+                <p class="text-left text-base md:text-base font-medium text-black leading-relaxed max-w-[300px]">
                     おおさか結言友会で会長をしています。
                     <br>
                     物心ついた頃からどもっていた記憶があり、元々は言葉を繰り返す連発がありましたが、少しずつどもることを隠すようになり、話し始めの言葉が出てこないブロック(難発)に変わりました。
@@ -223,7 +228,7 @@ const title = "全国言友会 吃音のある中高生交流会";
                 </div>
                 <p class="font-bold text-lg text-slate-900">たぶち せいな</p>
                 <p class="text-sm text-blue-600 font-medium mt-1 mb-4">社会人1年目</p>
-                <p class="text-left text-xs md:text-base font-medium text-black leading-relaxed max-w-[300px]">
+                <p class="text-left text-base md:text-base font-medium text-black leading-relaxed max-w-[300px]">
                     物心ついたときから吃音症があり社会人1年目の今でも吃音症状に悩む日々が続いています。
                     <br>
 私が中高生の頃は吃音のことを誰にも相談できず一番苦しんだ時期でもありました。
@@ -237,35 +242,38 @@ const title = "全国言友会 吃音のある中高生交流会";
         </div>
     </section>
 
-   <section id="news" class="bg-slate-200 py-24 relative overflow-hidden">
-    <div class="max-w-5xl mx-auto px-6 relative z-10">
-    <h3 class="w-fit mx-auto text-2xl font-bold mb-16 text-slate-900 border-b-4 border-blue-600 pb-3 px-2">
-        お知らせ
-    </h3>
+   <section id="news" class="bg-slate-200 py-16 md:py-24 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-10 md:px-6 relative z-10">
+        <h3 class="w-fit mx-auto text-2xl font-bold mb-16 text-slate-900 border-b-4 border-blue-600 pb-3 px-2">
+            お知らせ
+        </h3>
 
-    <div class="divide-y divide-slate-100">
-        {latestPosts.map((post) => (
-            <a href={`/posts/${post.id}`} class="group block py-6 transition-colors">
-                <div class="flex flex-col md:flex-row md:items-center gap-4">
-                    <time class="text-base text-black font-medium shrink-0">
-                        {post.data.date.toLocaleDateString('ja-JP').replace(/\//g, '.')}
-                    </time>
-                    
-                    <span class="w-fit px-3 py-1 text-xs font-bold text-blue-600 bg-blue-50 rounded-full shrink-0">
-                        {post.data.tag}
-                    </span>
-                    
-                    <h4 class="flex-1 text-lg font-bold text-slate-800 group-hover:text-blue-600 group-hover:underline decoration-2 underline-offset-4 transition-colors">
-                        {post.data.title}
-                    </h4>
-                </div>
-            </a>
-        ))}
-    </div>
+        <div class="divide-y divide-slate-300"> {latestPosts.map((post) => (
+                <a href={`/posts/${post.id}`} class="group block py-6 transition-colors">
+                    <div class="flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+                        
+                        <div class="flex items-center gap-4 shrink-0">
+                            <time class="text-base text-black font-medium">
+                                {post.data.date.toLocaleDateString('ja-JP').replace(/\//g, '.')}
+                            </time>
+                            
+                            <span class="w-fit px-3 py-1 text-xs font-bold text-blue-600 bg-blue-50 rounded-full">
+                                {post.data.tag}
+                            </span>
+                        </div>
+                        
+                        <h4 class="flex-1 text-lg font-bold text-slate-800 group-hover:text-blue-600 group-hover:underline decoration-2 underline-offset-4 transition-colors">
+                            {post.data.title}
+                        </h4>
+
+                    </div>
+                </a>
+            ))}
+        </div>
     </div>
 </section>
 
-    <section id="qa" class="bg-slate-50 py-24">
+    <section id="qa" class="bg-slate-50 py-16 md:py-24">
         <div class="max-w-4xl mx-auto px-6">
              <h3 class="w-fit mx-auto text-2xl md:text-2xl font-bold mb-16 text-slate-900 border-b-4 border-blue-600 pb-3 px-2">
     よくある質問
@@ -289,40 +297,40 @@ const title = "全国言友会 吃音のある中高生交流会";
                                 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-1</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">A-1.</span>
                                         <span class="leading-relaxed">申し込みはどうすればよいですか？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         開催日程&申込ページよりお願いします。
                                     </p>
                                 </div>
 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-2</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">A-2.</span>
                                         <span class="leading-relaxed">キャンセルしたい時・予約を変更したい時はどうすればよいですか？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         お問い合わせページよりお願いします。
                                     </p>
                                 </div>
 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-3</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">A-3.</span>
                                         <span class="leading-relaxed">申し込み期限はありますか？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         運営の準備の都合上、10日間前までにお申込みください。詳しくは開催日程をご覧ください。
                                     </p>
                                 </div>
 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-4</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">A-4.</span>
                                         <span class="leading-relaxed">Googleフォームから申し込みができませんがどうしたらよいですか？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         メール（chukosei.tsudoi@gmail.com)にてお申込みください。<br>
                                         「エラーが出てGoogleフォームから申し込みできません」など、一言添えていただけると幸いです。
                                     </p>
@@ -330,10 +338,10 @@ const title = "全国言友会 吃音のある中高生交流会";
 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">A-5</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">A-5.</span>
                                         <span class="leading-relaxed">参加費はありますか？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         無料です。
                                     </p>
                                 </div>
@@ -359,10 +367,10 @@ const title = "全国言友会 吃音のある中高生交流会";
                                 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-1</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">B-1.</span>
                                         <span class="leading-relaxed">吃音のある中高生交流会の目的は？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         中高生時代に吃音の悩みを相談したり分かち合う場所はほとんどありません。<br>
                                         ひとりで悩みを抱えている吃音のある中高生は多くいます。<br>
                                         同年代同士で悩みや体験をわかち、共に考え、“当事者目線“で未来を見据える場を提供することを目的に開催しています。<br>
@@ -372,10 +380,10 @@ const title = "全国言友会 吃音のある中高生交流会";
 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-2</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">B-2.</span>
                                         <span class="leading-relaxed">全国言友会とは？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         全国言友会連絡協議会は、個々人が「吃音があっても豊かに生きる」ための方法を見つけ、<br>
                                         実践するためのセルフヘルプ活動の拡充と、「吃音があっても豊かに生きられる社会」の実現に向けて、日々活動を続けています。
                                     </p>
@@ -383,20 +391,20 @@ const title = "全国言友会 吃音のある中高生交流会";
 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-3</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">B-3.</span>
                                         <span class="leading-relaxed">参加資格はありますか？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         中学生、高校生年代(小学6年生も可)の吃音のある方であればどなたでも参加可能です。
                                     </p>
                                 </div>
 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-4</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">B-4.</span>
                                         <span class="leading-relaxed">未診断でもセルフヘルプグループに参加できますか？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         大丈夫です。また、吃音の症状の重さや診断の有無に関係なく参加可能です。<br>
                                         吃音の診断を受けていない、吃音かどうかわからない、吃音の集まりに行ったことがない人でも大丈夫です。<br>
                                         ぜひご参加ください！
@@ -405,10 +413,10 @@ const title = "全国言友会 吃音のある中高生交流会";
 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">B-5</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">B-5.</span>
                                         <span class="leading-relaxed">言語訓練は行いますか？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         言語訓練は行いません。
                                     </p>
                                 </div>
@@ -434,10 +442,10 @@ const title = "全国言友会 吃音のある中高生交流会";
                                 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">C-1</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">C-1.</span>
                                         <span class="leading-relaxed">ZoomのURLが分かりません</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         申し込みフォームを送信したら、自動返信メールが届きます。開催日数日前にZoomのURLが記してあるメールをお送りします。<br>
                                         メールが届かない場合は、<br>
                                         「迷惑メールフォルダに分類されている」「入力したメールアドレスが間違っている」「申し込みができていない」<br>
@@ -448,10 +456,10 @@ const title = "全国言友会 吃音のある中高生交流会";
 
                                 <div>
                                     <h4 class="font-bold text-blue-600 flex items-start mb-2">
-                                        <span class="mr-2 leading-none mt-1 shrink-0 w-10 font-black">C-2</span>
+                                        <span class="mr-1 leading-none mt-1 shrink-0 w-10 font-black">C-2.</span>
                                         <span class="leading-relaxed">Zoomの使い方は？</span>
                                     </h4>
-                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-12">
+                                    <p class="text-sm md:text-base text-black font-medium leading-relaxed ml-11">
                                         自動返信メール記載のURLを押すと（初めて使用する場合には自動的にアプリのインストールが始まり）、<br>
                                         ミーティングに入ることができます。<br>
                                         スマホ・タブレットからの場合は、<br>
@@ -469,12 +477,12 @@ const title = "全国言友会 吃音のある中高生交流会";
         </div>
     </section>
 
-    <section id="school" class="py-24 bg-gradient-to-br from-blue-700 to-blue-800 text-white text-center relative overflow-hidden">
+    <section id="school" class="py-16 md:py-24 bg-gradient-to-br from-blue-700 to-blue-800 text-white text-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-50 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         
-        <div class="max-w-4xl mx-auto px-6 relative z-10">
-            <h3 class="text-3xl font-bold mb-6">中学校・高校の先生方へ</h3>
-            <p class="mb-10 text-blue-100 text-lg max-w-3xl mx-auto leading-relaxed">
+        <div class="max-w-4xl mx-auto px-8 md:px-6 relative z-10">
+            <h3 class="text-2xl md:text-3xl font-bold mb-6">中学校・高校の先生方へ</h3>
+            <p class="mb-10 text-blue-100 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
                 先生たちに知ってほしい吃音のこと（リーフレット・動画）を無料で公開しています。
                 <br>
                 教育現場での理解促進にお役立てください。
