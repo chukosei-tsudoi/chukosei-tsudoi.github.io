@@ -25,12 +25,12 @@ const { title } = Astro.props;
 <body class="zen-maru-gothic-regular bg-slate-50 text-slate-800 antialiased">
 
     <header id="main-header" class="fixed w-full top-0 left-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent">
-    <div id="header-inner" class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center transition-all duration-300">
+    <div id="header-inner" class="max-w-7xl mx-auto px-10 py-6 flex justify-between items-center transition-all duration-300">
         <a href="/" class="relative z-[60]"> 
             <h1 class="Makinas-4-Flat text-lg md:text-xl font-bold text-blue-700">全国言友会 吃音のある中高生交流会</h1>
         </a>
 
-        <nav class="hidden lg:flex items-center gap-1">
+        <nav class="hidden xl:flex items-center gap-1">
             <a href="#about" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">交流会について</a>
             <a href="#voice" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">参加者の声</a>
             <a href="#news" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">お知らせ</a>
@@ -39,7 +39,7 @@ const { title } = Astro.props;
             <a href="#contact" class="ml-2 px-5 py-2 text-sm font-bold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition">お問い合わせ</a>
         </nav>
 
-        <button id="menu-btn" class="lg:hidden relative z-[60] p-2 text-slate-600 focus:outline-none" aria-label="メニュー開閉">
+        <button id="menu-btn" class="xl:hidden relative z-[60] p-2 text-slate-600 focus:outline-none" aria-label="メニュー開閉">
             <div class="w-6 h-5 relative flex flex-col justify-between">
                 <span id="line-1" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
                 <span id="line-2" class="w-full h-0.5 bg-current transition-all duration-300"></span>
@@ -90,14 +90,12 @@ const { title } = Astro.props;
 
         if (window.scrollY > 100) {
             // スクロール時：白背景にする
-            header.classList.replace('bg-transparent', 'bg-white/90');
-            header.classList.replace('border-transparent', 'border-slate-100');
-            header.classList.add('backdrop-blur-sm', 'shadow-sm');
+            header.classList.replace('bg-transparent', 'bg-white/10');
+            header.classList.add('backdrop-blur-sm');
         } else {
             // トップに戻った時：透明に戻す
-            header.classList.replace('bg-white/90', 'bg-transparent');
-            header.classList.replace('border-slate-100', 'border-transparent');
-            header.classList.remove('backdrop-blur-sm', 'shadow-sm');
+            header.classList.replace('bg-white/10', 'bg-transparent');
+            header.classList.remove('backdrop-blur-sm');
         }
     }
 
