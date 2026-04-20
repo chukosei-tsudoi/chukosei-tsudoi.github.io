@@ -22,7 +22,7 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body class="zen-maru-gothic-regular bg-slate-50 text-slate-800 antialiased">
+<body class="zen-maru-gothic-regular bg-slate-50 text-black antialiased">
 
     <header id="main-header" class="fixed w-full top-0 left-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent">
     <div id="header-inner" class="max-w-8xl mx-auto max-md:pl-8 px-6 md:px-10 py-6 flex justify-between items-center transition-all duration-300">
@@ -34,12 +34,12 @@ const { title } = Astro.props;
 </a>
 
         <nav class="hidden xl:flex items-center gap-1">
-            <a href="/#about" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">交流会について</a>
-            <a href="/#voice" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">参加者の声</a>
-            <a href="/#news" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">お知らせ</a>
-            <a href="/#qa" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">よくある質問</a>
-            <a href="/#other" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">主な全国各地の交流会</a>
-            <a href="/#school" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">中学校・高校の先生方へ</a>
+            <a href="/#about" class="px-3 py-2 text-sm text-black hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">交流会について</a>
+            <a href="/#voice" class="px-3 py-2 text-sm text-black hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">参加者の声</a>
+            <a href="/#news" class="px-3 py-2 text-sm text-black hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">お知らせ</a>
+            <a href="/#qa" class="px-3 py-2 text-sm text-black hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">よくある質問</a>
+            <a href="/#other" class="px-3 py-2 text-sm text-black hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">主な全国各地の交流会</a>
+            <a href="/#school" class="px-3 py-2 text-sm text-black hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">中学校・高校の先生方へ</a>
             <a href="/#contact" class="ml-2 px-5 py-2 text-sm font-bold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition">お問い合わせ</a>
         </nav>
 
@@ -52,12 +52,12 @@ const { title } = Astro.props;
         </button>
 
         <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-white z-[50] flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
-            <a href="/#about" class="nav-link text-xl text-slate-800 font-bold">交流会について</a>
-            <a href="/#voice" class="nav-link text-xl text-slate-800 font-bold">参加者の声</a>
-            <a href="/#news" class="nav-link text-xl text-slate-800 font-bold">お知らせ</a>
-            <a href="/#qa" class="nav-link text-xl text-slate-800 font-bold">よくある質問</a>
-            <a href="/#other" class="nav-link text-xl text-slate-800 font-bold">主な全国各地の交流会</a>
-            <a href="/#school" class="nav-link text-xl text-slate-800 font-bold mb-1">中学校・高校の先生方へ</a>
+            <a href="/#about" class="nav-link text-xl text-black font-bold">交流会について</a>
+            <a href="/#voice" class="nav-link text-xl text-black font-bold">参加者の声</a>
+            <a href="/#news" class="nav-link text-xl text-black font-bold">お知らせ</a>
+            <a href="/#qa" class="nav-link text-xl text-black font-bold">よくある質問</a>
+            <a href="/#other" class="nav-link text-xl text-black font-bold">主な全国各地の交流会</a>
+            <a href="/#school" class="nav-link text-xl text-black font-bold mb-1">中学校・高校の先生方へ</a>
             <a href="/#contact" class="nav-link px-8 py-3 text-lg font-bold text-white bg-blue-600 rounded-full">お問い合わせ</a>
         </nav>
     </div>
@@ -145,10 +145,11 @@ const { title } = Astro.props;
                     content.style.gridTemplateRows = '0fr';
                     icon.classList.remove('rotate-180');
                 } else {
+                    /*
                     // 他の開いているカテゴリを閉じる（1つずつしか開けないようにする設定）
                     document.querySelectorAll('.category-content').forEach(c => c.style.gridTemplateRows = '0fr');
                     document.querySelectorAll('.category-icon').forEach(i => i.classList.remove('rotate-180'));
-
+                    */
                     // クリックしたカテゴリを開く
                     content.style.gridTemplateRows = '1fr';
                     icon.classList.add('rotate-180');
