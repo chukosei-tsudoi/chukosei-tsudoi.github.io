@@ -21,24 +21,24 @@ const { Content } = await render(post);
   <article class="py-28 md:py-36 max-w-4xl mx-auto px-8 md:px-6">
     <header class="mb-2 md:mb-8 pb-10">
       <div class="flex items-center gap-4 mb-4">
-        <time class="text-slate-500 font-medium">
+        <time class="text-black font-medium">
           {post.data.date.toLocaleDateString('ja-JP').replace(/\//g, '.')}
         </time>
         <span class="px-3 py-1 text-xs font-bold text-blue-600 bg-blue-50 rounded-full">
           {post.data.tag}
         </span>
       </div>
-      <h1 class="text-3xl md:text-3xl font-bold text-slate-900 leading-tight">
+      <h1 class="text-3xl md:text-3xl font-bold text-black leading-tight">
         {post.data.title}
       </h1>
     </header>
 
-    <div class="font-medium text-lg prose prose-slate prose-lg max-w-none prose-headings:text-slate-900 prose-headings:font-bold prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-2xl">
+    <div class="font-medium text-lg prose prose-slate prose-lg max-w-none prose-headings:text-black prose-headings:font-bold prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-2xl">
       <Content />
     </div>
 
     <footer class="mt-16 pt-8">
-      <a href="/" class="inline-flex items-center text-slate-600 font-bold hover:text-blue-600 transition">
+      <a href="/" class="inline-flex items-center text-black font-bold hover:text-blue-600 transition">
         <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
