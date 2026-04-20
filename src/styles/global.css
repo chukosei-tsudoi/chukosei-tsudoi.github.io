@@ -38,6 +38,10 @@
     scroll-margin-top: 80px; /* 上から80px下にスクロールさせる */
 }
 
+#other {
+    scroll-margin-top: 80px; /* 上から80px下にスクロールさせる */
+}
+
 #school {
     scroll-margin-top: 80px; /* 上から80px下にスクロールさせる */
 }

@@ -25,7 +25,7 @@ const { title } = Astro.props;
 <body class="zen-maru-gothic-regular bg-slate-50 text-slate-800 antialiased">
 
     <header id="main-header" class="fixed w-full top-0 left-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent">
-    <div id="header-inner" class="max-w-7xl mx-auto max-md:pl-8 px-6 md:px-10 py-6 flex justify-between items-center transition-all duration-300">
+    <div id="header-inner" class="max-w-8xl mx-auto max-md:pl-8 px-6 md:px-10 py-6 flex justify-between items-center transition-all duration-300">
         <a href="/" class="relative z-[60]"> 
     <h1 class="Makinas-4-Flat text-lg md:text-xl xl:text-2xl font-bold text-blue-700 leading-tight">
         全国言友会<br class="xl:hidden" />
@@ -38,11 +38,12 @@ const { title } = Astro.props;
             <a href="#voice" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">参加者の声</a>
             <a href="#news" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">お知らせ</a>
             <a href="#qa" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">よくある質問</a>
+            <a href="#other" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">主な全国各地の交流会</a>
             <a href="#school" class="px-3 py-2 text-sm text-slate-800 hover:text-blue-600 font-bold rounded-lg hover:bg-slate-50 transition">中学校・高校の先生方へ</a>
             <a href="#contact" class="ml-2 px-5 py-2 text-sm font-bold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition">お問い合わせ</a>
         </nav>
 
-        <button id="menu-btn" class="xl:hidden relative z-[60] p-2 text-black focus:outline-none" aria-label="メニュー開閉">
+        <button id="menu-btn" class="xl:hidden relative z-[60] p-2 text-black focus:outline-none cursor-pointer" aria-label="メニュー開閉">
             <div class="w-6 h-5 relative flex flex-col justify-between">
                 <span id="line-1" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
                 <span id="line-2" class="w-full h-0.5 bg-current transition-all duration-300"></span>
@@ -55,7 +56,8 @@ const { title } = Astro.props;
             <a href="#voice" class="nav-link text-xl text-slate-800 font-bold">参加者の声</a>
             <a href="#news" class="nav-link text-xl text-slate-800 font-bold">お知らせ</a>
             <a href="#qa" class="nav-link text-xl text-slate-800 font-bold">よくある質問</a>
-            <a href="#school" class="nav-link text-xl text-slate-800 font-bold">先生方へ</a>
+            <a href="#other" class="nav-link text-xl text-slate-800 font-bold">主な全国各地の交流会</a>
+            <a href="#school" class="nav-link text-xl text-slate-800 font-bold">中学校・高校の先生方へ</a>
             <a href="#contact" class="nav-link px-8 py-3 text-lg font-bold text-white bg-blue-600 rounded-full">お問い合わせ</a>
         </nav>
     </div>
